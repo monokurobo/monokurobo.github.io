@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="棘手的问题&amp;emsp;&amp;emsp;当我遇到技术上的问题的时候，我就会很急躁，总是想解决它。有的时候睡不好，吃不香。有的时候被卡住好多天，那段时间是最难熬的。但是当有一天灵光一现的解决了的时候，感觉周围的一切都瞬间美好了。周围的技术同行已经开始转行了，有的自然而然的进化成了架构，有的转向测试，有的开始学习business或者转管理。而我却还是沉浸在写代码成功的喜悦中。有的时候会问自己，你是不是不思进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="断断续续的碎碎念">
+<meta property="og:url" content="http://example.com/2018/11/16/nagging/index.html">
+<meta property="og:site_name" content="蔡-网络碎碎念">
+<meta property="og:description" content="棘手的问题&amp;emsp;&amp;emsp;当我遇到技术上的问题的时候，我就会很急躁，总是想解决它。有的时候睡不好，吃不香。有的时候被卡住好多天，那段时间是最难熬的。但是当有一天灵光一现的解决了的时候，感觉周围的一切都瞬间美好了。周围的技术同行已经开始转行了，有的自然而然的进化成了架构，有的转向测试，有的开始学习business或者转管理。而我却还是沉浸在写代码成功的喜悦中。有的时候会问自己，你是不是不思进">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-16T05:20:23.000Z">
+<meta property="article:modified_time" content="2018-11-16T05:20:23.000Z">
+<meta property="article:author" content="蔡">
+<meta property="article:tag" content="Java,日本,测试,卡车,telematics,暴雪娱乐,暗黑,炉石传说">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2018/11/16/nagging/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>断断续续的碎碎念 | 蔡-网络碎碎念</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">蔡-网络碎碎念</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">深居异乡，热爱生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">37</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%98%E6%89%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">棘手的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E6%80%9D"><span class="nav-number">2.</span> <span class="nav-text">反思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%AF%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E6%AD%A3"><span class="nav-number">4.</span> <span class="nav-text">转正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E8%AF%81"><span class="nav-number">5.</span> <span class="nav-text">考证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%80%9D%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">编程语言的思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E8%BA%AB%E5%8F%91%E5%B1%95"><span class="nav-number">7.</span> <span class="nav-text">自身发展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E7%96%BC%E7%9A%84%E9%82%BB%E5%B1%85"><span class="nav-number">8.</span> <span class="nav-text">头疼的邻居</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%85%B9%E6%9C%89%E8%AF%97%E4%B9%A6%E6%B0%94%E8%87%AA%E5%8D%8E"><span class="nav-number">9.</span> <span class="nav-text">腹有诗书气自华</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#N3%E8%80%83%E8%AF%95%E9%80%9A%E8%BF%87"><span class="nav-number">10.</span> <span class="nav-text">N3考试通过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%AC%E9%A9%BE%E7%85%A7"><span class="nav-number">11.</span> <span class="nav-text">日本驾照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B1%E6%9C%BA%E6%84%8F%E8%AF%86"><span class="nav-number">12.</span> <span class="nav-text">危机意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%89%8B%E6%9C%BA"><span class="nav-number">13.</span> <span class="nav-text">换手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AA%81%E7%84%B6%E6%B2%A1%E4%BF%A1%E5%BF%83%EF%BC%882018-11-5%EF%BC%89"><span class="nav-number">14.</span> <span class="nav-text">突然没信心（2018-11-5）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac%E7%94%B5%E8%84%91%E7%AA%81%E7%84%B6%E6%97%A0%E6%B3%95%E7%99%BB%E9%99%86"><span class="nav-number">15.</span> <span class="nav-text">Mac电脑突然无法登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%BE%E7%81%B5%E5%AE%9D%E5%8F%AF%E6%A2%A6-%E7%9A%AE%E5%8D%A1%E4%B8%98"><span class="nav-number">16.</span> <span class="nav-text">精灵宝可梦-皮卡丘</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蔡"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">蔡</p>
+  <div class="site-description" itemprop="description">工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/11/16/nagging/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          断断续续的碎碎念
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-16 14:20:23" itemprop="dateCreated datePublished" datetime="2018-11-16T14:20:23+09:00">2018-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="棘手的问题"><a href="#棘手的问题" class="headerlink" title="棘手的问题"></a>棘手的问题</h3><p>&emsp;&emsp;当我遇到技术上的问题的时候，我就会很急躁，总是想解决它。有的时候睡不好，吃不香。有的时候被卡住好多天，那段时间是最难熬的。但是当有一天灵光一现的解决了的时候，感觉周围的一切都瞬间美好了。周围的技术同行已经开始转行了，有的自然而然的进化成了架构，有的转向测试，有的开始学习business或者转管理。而我却还是沉浸在写代码成功的喜悦中。有的时候会问自己，你是不是不思进取，守着码农的工作孤芳自赏。为一些没人知晓的成就（比如解决技术上的问题）沾沾自喜。</p>
+<h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>&emsp;&emsp;最近跟一个猎头聊了一下日本的就业市场，大概知道了一些这边的情况，日语还是我的一个硬伤，不会日语，失去了很多入圈的机会。车联网市场在日本还是很有前途的。他直言说我现在的薪资太低了，给我画了一个大饼，我懂，他是鼓动我离开现在的职位，猎头的本职就是这样的，理解。我的会社员合同下个月才会生效，我需要这份永久合同的保障，这样才可以给我的家庭提供坚实的保证。头脑不能热，跳槽需谨慎，尤其是在日本。</p>
+<a id="more"></a>
+
+<h3 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h3><p>&emsp;&emsp;前一段时间对日本的各行各业的积分系统产生了兴趣，花了一些时间来研究和实现。日本社会的积分无处不在，同样是消费一笔钱，怎么个花法会产出不同的结果。举例来说，我们要花1万日元来买东西：</p>
+<ol>
+<li>如果直接跑到店铺里，掏出现金付账，不会有任何的积分产生。</li>
+<li>你刷信用卡消费了1万，那么就可以很简单的得到100积分，注意，积分是1:1的，所以就相当于返金100日元。</li>
+<li>但是如果你把1万日元从信用卡充值到电子money中，比如nanaco，或者Edy。这样的话，信用卡的消费积分还在，而且你用电子money继续消费这1万日元的话，你还可以得到相对应的nanaco和Edy积分，而且也是1:1的。如果计算正确的话，1万日元你可以得到返金150日元</li>
+</ol>
+<p>&emsp;&emsp;积少成多吗！你花一百万的时候就可以返金二万，也是不小的数目啊，而且操作起来也不复杂，关键是使用电子money就可以不用放很多硬币在钱包里了。一举多得。终归到底，这只是商家鼓励消费的一种手段，权当乐趣了，真打算用它省钱是不可能的。还是多把时间放在工作中，给自己的人生收获更多的“积分”。</p>
+<h3 id="转正"><a href="#转正" class="headerlink" title="转正"></a>转正</h3><p>&emsp;&emsp;2016年11月，转正社员后的第一个月的工资实在是惨不忍睹。刨除了租房子，生活费，水电煤气网，妥妥的就没有啥了！抓紧时间充电，换个地方！</p>
+<h3 id="考证"><a href="#考证" class="headerlink" title="考证"></a>考证</h3><p>&emsp;&emsp;12月4号去考日语N4，说出来都被祖国人民耻笑了，说你来日本2年多了，才N4起步，以后别说我认识你啊！恩，我承认错误，正在积极的弥补，争取明年的12月4号可以把N2过了，这样语言关就算过了。以后找工作就好弄了，明年的计划里还要考java认证，吃饭的家伙还是需要考个证书的，以后用的着。简单调查了一下，java认证每个星期都可以考，就是有点小贵，所以要争取一次通过。</p>
+<blockquote>
+<p>2017年二月得知N4考试已经通过<br>2018年二月得知N3考试已经通过</p>
+</blockquote>
+<h3 id="编程语言的思考"><a href="#编程语言的思考" class="headerlink" title="编程语言的思考"></a>编程语言的思考</h3><p>&emsp;&emsp;曾经，总是爱看编程语言排行榜，总是喜欢阅读一些新技术的尝鲜文字。慢慢的发现，语言真的不是关键。对于一个问题，每个编程语言都可以实现，解决问题的关键是如何选择最优的解决方案。每个语言都有自己擅长的部分和不擅长的部分，反而基础知识才是构建上层建筑的基石。开始回头重新发现和理解基础学科，比如http，7层模型，JVM的实现等等。这个岁数才看清这些，不知道晚不晚，还是用那句老话来说服自己吧：什么时候开始都不算晚</p>
+<h3 id="自身发展"><a href="#自身发展" class="headerlink" title="自身发展"></a>自身发展</h3><p>&emsp;&emsp;TM和BA摆在面前，我真的想基于技术走管理路线吗？我还是没有想通！（2017-11-20）正式决定End2End Test Manager!，意外之喜是工资居然涨了不少，纯属意外。</p>
+<h3 id="头疼的邻居"><a href="#头疼的邻居" class="headerlink" title="头疼的邻居"></a>头疼的邻居</h3><p>&emsp;&emsp;2017-12-05，楼下的那个奶奶又犯病了，病症是：从8楼跑到9楼按我家的门铃和敲门，因为这次是第二次了，所以我们并没有开门，想想还挺可怕的，大晚上10多了，咣咣敲门，还试图打开门闯进来，第一次的时候还往门上的信筒里塞东西，塞的还是吃了一半的东西，还有用过的毛巾什么的，这是今年的第二次了，这次就是单纯的砸门。上次之后我跟她老爷子聊过这个事情，他说她有病，晚上的时候睡不着，躁动起来就会干这些事情，还说犯病频率不高，但是目前来看，1年两次的样子，而问题就是他们的楼层有那么多的住户，为什么要跑到我们楼层来敲我们家的门，我必须要写一封信给她老头子。<br>&emsp;&emsp;楼下爷爷回信了，说他为什么成为基督教的牧师，每天晚上要去研习圣经，本来他俩是一起学习的，但是奶奶后来不想参加了，每晚就要孤独得睡不着，就会犯毛病，他说他们预约了医生，会尽快治疗。我还能说什么呢？<br>&emsp;&emsp;2018-05-07,楼下的奶奶又犯病了，这次什么东西都没有拿，但是早晨05:00就来敲门，还好UR更新了监控门铃，看到是楼下的奶奶，我们还是选择不开门。</p>
+<h3 id="腹有诗书气自华"><a href="#腹有诗书气自华" class="headerlink" title="腹有诗书气自华"></a>腹有诗书气自华</h3><p>&emsp;&emsp;教养与学历无关，一个人可以有文化没教养，也可以没文化而有教养</p>
+<h3 id="N3考试通过"><a href="#N3考试通过" class="headerlink" title="N3考试通过"></a>N3考试通过</h3><p>&emsp;&emsp;2018-02-06，收到日语N3考试的记过，不出意外的通过了，对于学习日语又增加了一些自信，但是分数不是很高。看来如果想N2顺利通过还是要下大功夫啊，毕竟N2才是入门可以看新闻和电视的基础啊！</p>
+<h3 id="日本驾照"><a href="#日本驾照" class="headerlink" title="日本驾照"></a>日本驾照</h3><p>&emsp;&emsp;从3月份报名开始到现在5月份，我还是不敢去报考，大家都说鴻巢是考试最严格的，但是明天(2018-05-10)我决定去参加考试，看看到底是怎么个严格法，我的预期是笔试必须通过，体验驾驶考试，如果通过更好，但是即使通过不了我也要跑完整个course</p>
+<p>2018-05-10，普通仮免　ーー　失敗</p>
+<p>&emsp;&emsp;这次的失败，让我沮丧了2个小时，连50个问题都搞不定，后面的100问不适更没希望了吗！<br>从高考之后，似乎已经好久没有因为失败而沮丧过了，日语考试也都是以刚及格的程度通过的，已经过了懊恼之后就发誓要好好干的年纪，我分析了这次失败的原因是我复习的材料跟考试的材料不适很贴，有几道没有见过的题，这是一，还有就是我的日文阅读速度太慢了，人家都交卷了我才做了一半，我要在保证正确率的基础上提高自己的日文阅读速度。</p>
+<p>&emsp;&emsp;解决方案：</p>
+<ul>
+<li><p>在Amazon或者书店买一本练习题记，复习到滚瓜烂熟再去考试。</p>
+</li>
+<li><p>为了今年的N2考试我也必须开始加把劲学习了，就像Stella说的，既然已经觉得未来在这里生活了，日语是绕不过去。还不如早点学好。</p>
+</li>
+</ul>
+<p>2018-11-12<br>渐渐喜欢上了开车，停车也不再是头疼的问题，带着一家人出门游玩的感觉很好！</p>
+<h3 id="危机意识"><a href="#危机意识" class="headerlink" title="危机意识"></a>危机意识</h3><p>&emsp;&emsp;最近看了一个日本电影《生存家族》，讲述早晨醒来，全日本的所有的电力都不能使用，包括电池，汽车，网络…，这个时候的日本一家人是如何面对的。当然故事的结尾是美好的，2年多以后，电力恢复，一家人也从以前的不睦到相互扶持，一起经历过苦难的人才会更加珍惜彼此。</p>
+<p>从中学到了灾害来临的时候不能慌，第一重要的是水，不是食物。没有食物人可以撑些日子，要是没水就会很快死去，第二天就去超市买了很多很多水备用。<br>9月刚一开始，台风21号就肆虐了日本全境，紧接着就是北海道的6.9级地震，灾害频发，令人侧目。</p>
+<h3 id="换手机"><a href="#换手机" class="headerlink" title="换手机"></a>换手机</h3><p>&emsp;&emsp;每年的9月都是苹果产品的发布季，公司的手机着实慢的不行不行了，所以决定以自己的身份办一个新手机，但是老婆肯定要先用新品。那我用他的7plus也不错啊。</p>
+<p>2018-10-24<br>本来觉得不好意思找公司要新手机，结果跟service desk联系以后，直接就给我换了一个新的iphone手机，虽然还是6，但是速度很爽，省钱了</p>
+<h3 id="突然没信心（2018-11-5）"><a href="#突然没信心（2018-11-5）" class="headerlink" title="突然没信心（2018-11-5）"></a>突然没信心（2018-11-5）</h3><p>2018年12月的日语考试近在咫尺，但是我就是提不起来精神复习日语，所有的资料都很全，但是就是不愿意学习了，稍微有了点时间也想打会儿游戏，本来自己的时间就很少，两个孩子都睡了，估计也要10点了，自己最多最多还有两个小时的时间来支配，感觉如果再学习的话，身体或者精神会很难受，当然了，这些都是我自己给自己找的借口。每天总是时不时的谴责自己为什么不上进，可是到了时间，就是不想打开书本复习日语。</p>
+<h3 id="Mac电脑突然无法登陆"><a href="#Mac电脑突然无法登陆" class="headerlink" title="Mac电脑突然无法登陆"></a>Mac电脑突然无法登陆</h3><p>2018-11-07<br>晚，夜宿APA酒店，在连接上酒店的wifi后不久出现了无法登陆系统的问题，我就深度怀疑APA网络里有问题，遇到中文操作系统就黑掉，哎，怀疑归怀疑，只好去bic carema修，1万大元就交出去了，shit！好讨厌的感觉</p>
+<h3 id="精灵宝可梦-皮卡丘"><a href="#精灵宝可梦-皮卡丘" class="headerlink" title="精灵宝可梦-皮卡丘"></a>精灵宝可梦-皮卡丘</h3><p>2018-11-16<br>一大早起来就买了下载版本的精灵宝可梦-皮卡丘版本，花了6500，有点小贵感觉，但是毕竟这是我玩的那个版本的复刻版，曾经的真新镇，曾经的小智，曾经的关东地区。唯一不同的是，我可以和我的女儿一起愉快的游戏了，这种感觉真的很不错，也只有任天堂这样的以百年老店为目标的公司才可以成全我这样的梦想。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/11/12/my-apple/" rel="prev" title="我的小苹果">
+                  <i class="fa fa-chevron-left"></i> 我的小苹果
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/02/28/reiwaFeb/" rel="next" title="杂乱二月记">
+                  杂乱二月记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蔡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

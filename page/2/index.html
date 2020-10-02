@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+<meta property="og:type" content="website">
+<meta property="og:title" content="蔡-网络碎碎念">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="蔡-网络碎碎念">
+<meta property="og:description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="蔡">
+<meta property="article:tag" content="Java,日本,测试,卡车,telematics,暴雪娱乐,暗黑,炉石传说">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>蔡-网络碎碎念</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">蔡-网络碎碎念</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">深居异乡，热爱生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">37</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蔡"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">蔡</p>
+  <div class="site-description" itemprop="description">工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+      
+
+      
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/02/plan-2020/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/02/plan-2020/" class="post-title-link" itemprop="url">2020年计划单</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-02 13:26:15" itemprop="dateCreated datePublished" datetime="2019-12-02T13:26:15+09:00">2019-12-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">计划</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <img src="/img/2020.jpg" alt="2020年计划" />
+
+<ol>
+<li>还清Mingwei哥的钱</li>
+<li>找到一个自己的真正的爱好并记录行为</li>
+<li>跑步总里程数240KM (Weekly5km,Monthly20km,Yearly240km)</li>
+<li>带全家回国一次</li>
+<li>7月份的JLPT- N1合格</li>
+<li>用赚到的Point 买一台兼顾学习和娱乐的笔记本电脑</li>
+<li>阅读3本日文书籍（页数&gt;300)</li>
+<li>找到可以提供被动收入的Income，无论钱多少</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/02/reiwaDec/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/02/reiwaDec/" class="post-title-link" itemprop="url">寒冬将至</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-02 13:02:39" itemprop="dateCreated datePublished" datetime="2019-12-02T13:02:39+09:00">2019-12-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-10 17:05:39" itemprop="dateModified" datetime="2019-12-10T17:05:39+09:00">2019-12-10</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <img src="/img/winter_in_japan.jpg" alt="日本冬色" />
+
+<h2 id="十二月二号-正式进入12月"><a href="#十二月二号-正式进入12月" class="headerlink" title="十二月二号 - 正式进入12月"></a><strong>十二月二号 - 正式进入12月</strong></h2><p>&emsp;&emsp;这个月是2019年的最后一个月，一句废话。<br>&emsp;&emsp;每次到这个时候，就到了回顾本年，展望明年的时候，电视网络上也开始了年终评选，现在网络节目的影响力对于老年人可能没有什么，但是年轻人看电视的不是很多了。每年的12月份，我也会回顾本年的计划并制定下一年的计划。<br>&emsp;&emsp;2019年的个人计划一共8个，实现了4个，未完成4个，总体来说是不合格的。下面是逐个分析：<br>&emsp;&emsp;”瘦到80公斤以下并且保持到2020”,计划的就很扯淡并且不具有可测量性。下次要吸取教训！比如向santosh学习：跑步100KM，这个就很好评估，只需要把自己的跑步里程数加起来就可以评估。<br>&emsp;&emsp;”把天津的房子卖了”，这个计划他没有考量到市场的波动问题，比如说：如果高于多少钱就出手，市场行市不好，肯定不能贱卖对吧。下次要吸取教训！<br>&emsp;&emsp;”台湾旅游”,这个是我计划清单里的常客，但是每次都无法实现。首先是财务问题不支持，再者是大陆政府对台湾的旅游政策波动。所以推迟到以后吧，好饭不怕晚<br>&emsp;&emsp;”抚养亲族添加老人”, 这个还是主要因为自己的日语不自信上，怕麻烦，所以迟迟没有行动，但是我已经添加了抚养家属到2020年的计划里，明年必须搞一下</p>
+<h2 id="十二月四号-Bonus拿到，这一年就结束了"><a href="#十二月四号-Bonus拿到，这一年就结束了" class="headerlink" title="十二月四号 - Bonus拿到，这一年就结束了"></a><strong>十二月四号 - Bonus拿到，这一年就结束了</strong></h2><p>&emsp;&emsp;每年的7，12月是最开心的两个月份，商家也都是在这两个月份打折促销力度最大，因为他们直到这是每年发奖金的时候，所以各种打折，降价，买一送一，积分返金啥的活动搞得真是不要太热闹。作为来了5年得我们家来说，一切都开始看得很淡，除了老婆还有点蠢蠢欲动，总想着出去浪一下，哪怕是浪一小下也可以。但是在日本这个社会，无论怎么浪，都是要有经济来支持的。<br>&emsp;&emsp;其实看到奖金的时候，我也开始盘算着可以给自己买点什么东西，但是每每想起，又作罢，总觉得应该省点钱来还债。我有时候在想，等我年纪更大一些，会不会后悔我现在因为经济的些许紧张而不停的挤压自己的欲望。等到了有能力购买的时候，自己已经没有了兴趣呢? 越来越真切的感觉到，人的兴趣真的会变，以前很爱很爱的兴趣都会被慢慢抹平，时间越久，磨的越没有痕迹，慢慢的，就不爱了。</p>
+<h2 id="十二月五号-口说无凭，留下证据"><a href="#十二月五号-口说无凭，留下证据" class="headerlink" title="十二月五号 - 口说无凭，留下证据"></a><strong>十二月五号 - 口说无凭，留下证据</strong></h2><p>&emsp;&emsp;华为251的事情闹得沸沸扬扬，我就是大概了解了一下，通过这一起劳资纠纷案，我学到了一个很重要的道理：重要的事情都要留下证据！人类的记忆很短暂，如果不是刻骨铭心的事情，很快就会忘记。其实忘记这个技能是我们人类保命的法宝，如果没有这个技能，我们很多的痛苦过往就会不断涌上心头。但是重要的事情真的必须要留下证据。如果不是这个员工聪明，时刻录音，而且录音证据并且分开保存，他极其有可能在牢狱里度过后半生了。<br>&emsp;&emsp;今早也发生了一件事情就是，生产环境遇到问题，有一个参数无法在系统中看到，Suda就开始问我QA环境测试的时候是什么情况，还好我保留了发送给BA请求验证的邮件证据，不然这个锅我就要来背了。 其实这两个事情很像，如果当事人拿不出证据，那么就会很快的陷入被动。这是今天的收获。谨记！<br>&emsp;&emsp;昨晚的毛毛很难哄睡，特此记录，总是找妈妈。身体已经困得不行了，但是就是强撑着不睡觉。<br>&emsp;&emsp;仔细听石进的《夜的钢琴曲31》，并且Google了他的生平简介-大学学计算机，现在是国企电子工程师，因为看周杰伦在演唱会弹钢琴，所以下决心学习钢琴，在无数个夜里，谱写了共31首旋律。《非诚勿扰2》选择了《夜的钢琴曲5》，让他一下名声大噪。现在开始从第一曲开始听， 突然有种想学习钢琴的冲动，就像他曾经看周杰伦弹琴而萌生学习钢琴的想法，现在的我听着他的曲调，开始幻想有一天，我能够弹出他的这些《夜的钢琴曲31》，该有多好，我相信一切都不晚。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/02/reiwaDec/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/01/reiwaNov/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/01/reiwaNov/" class="post-title-link" itemprop="url">渐冷的秋天</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-01 10:37:57" itemprop="dateCreated datePublished" datetime="2019-11-01T10:37:57+09:00">2019-11-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-10-01 11:46:56" itemprop="dateModified" datetime="2019-10-01T11:46:56+09:00">2019-10-01</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <img src="/img/fall_in_japan.jpg" alt="日本秋色" />
+
+<h2 id="十一月一号-年底了！"><a href="#十一月一号-年底了！" class="headerlink" title="十一月一号 - 年底了！"></a><strong>十一月一号 - 年底了！</strong></h2><p>&emsp;&emsp;日历又翻篇了，十一月开始了，距离姥姥回去还有11天。在家里贴上了倒计时的牌子，来提醒大家，姥姥在的美好日子将暂时的一去不复返了。<br>&emsp;&emsp;十月份支出严重赤字，主要是给绒绒买书包和轻井泽旅游导致的。11月份需要合理化支出。<br>&emsp;&emsp;暴雪嘉年华明天就要开始了，还是很期待暗黑4的。</p>
+<h2 id="十一月五号-我又来上班了"><a href="#十一月五号-我又来上班了" class="headerlink" title="十一月五号 - 我又来上班了"></a><strong>十一月五号 - 我又来上班了</strong></h2><p>&emsp;&emsp;三天的小长假很快就过去了，这个星期的重点是为年末调整准备loan的资料<br>&emsp;&emsp;今天突然又开始想着买游戏笔记本拯救者Y7000P，9299的价格确实有些高，倒不是没有钱，主要是现在家里财政状况正堪忧，怎么可能同意我换笔记本呢？我又没什么刚性需求，就是想玩一些游戏。而昨天我还答应人家，等姥姥走了，我看着两个孩子，让老婆去健身，合着我就会吹！！？算了，压制一下自己内心得欲望吧！</p>
+<h2 id="十一月六号-突然腰疼的不行"><a href="#十一月六号-突然腰疼的不行" class="headerlink" title="十一月六号 - 突然腰疼的不行"></a><strong>十一月六号 - 突然腰疼的不行</strong></h2><p>&emsp;&emsp;本来带着跑步的装备来公司，但是路上突然就腰疼的不行，撑着完成了当天的工作，下了班直接去了家门口的接骨院，运气很好，直接就接受了治疗，医生这次重点按压了我的双腿病开了跟上次一样的膏药，说肌肉会至少疼三天。有啥别有病，真不是开玩笑的。<br>&emsp;&emsp;今天腰痛好了很多，可以站立办公了。外面阳光灿烂，真想出去晒晒太阳。那就去！<br>&emsp;&emsp;前些日子，我向往着Amazon Echo，跑步后想买无线蓝牙耳机，可是当这些小心愿都很快满足后，我并没有很很经常的持续使用他们，就是新鲜劲儿过去了，我在想，如果买了电脑之后是不是也会这样。我对什么都提不起兴趣了。没有新的兴趣，老的兴趣也在渐渐消亡，难道这就是长大的感觉吗？还是我追求的不对，我需要更加的完善自己，充实自己，挣更多的钱，不是不可以，但是我想问：然后呢？？也许有人会觉得我是“无病呻吟”，但是追求的空虚感真的越来越强，不知该怎么样。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/01/reiwaNov/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/01/reiwaOct/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/01/reiwaOct/" class="post-title-link" itemprop="url">美丽的秋天</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-01 11:46:56" itemprop="dateCreated datePublished" datetime="2019-10-01T11:46:56+09:00">2019-10-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="十月一号-新的月份开始了！"><a href="#十月一号-新的月份开始了！" class="headerlink" title="十月一号 - 新的月份开始了！"></a><strong>十月一号 - 新的月份开始了！</strong></h2><p>&emsp;&emsp;早晨时候就开始查看绒绒幼儿园的园费收取情况，就想看看政府到底给减免了多少，结果还是蛮喜人的:减免了2.5万左右，如果按照增长2%的消费税来看，我要消费125万的日币，才会是2.5万日币。由此可见，日本政府的执行力度还是很给力的。我们其实是这个项目的实际受益人。绒绒可以用几个月，毛毛倒是可以从头适用。如果每个月可以减少2.5万的支出的话，对于我们的生活质量还是会有帮助的。<br>&emsp;&emsp;今天是国庆，二姐出游，大姐夫加班，只有哥一个人去爸妈那里过节，妈还说猪肉已经涨到22块钱一斤了。呵呵！<br>&emsp;&emsp;从10-12月份，绒绒的校车改成晚bus，不需要我送了。顺势开始了我的跑步健身之路。带着我新到的无线耳机，7点40开始跑步，30分钟3.6公里，跑完之后整个人都精神了，很爽！见面打招呼就可以感觉的出来。怪不得日本人见面都会问：”お元気ですか?” 看来人的元气/精神头真的很重要，今天还搜索了一下成人每天的卡路里摄入量。争取控制在1800-2000，这样坚持下来的话，身体的整体状态是会变好的，减肥不减肥倒不是很重要，还是要看BMI和体脂率。<br>&emsp;&emsp;Hexo的日志按照更新日期排序的问题解决了，告别了手动的方式，开心一下。参见<a target="_blank" rel="noopener" href="https://blog.vanxnf.top/2018/09/03/Hexo-%E5%8D%9A%E5%AE%A2-Hiker-%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E6%9C%80%E5%90%8E%E7%BC%96%E8%BE%91%E6%97%B6%E9%97%B4%EF%BC%8C%E5%B9%B6%E6%8C%89%E7%85%A7%E6%9C%80%E5%90%8E%E7%BC%96%E8%BE%91%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/">这里</a></p>
+<h2 id="十月二号-Package-Syncing"><a href="#十月二号-Package-Syncing" class="headerlink" title="十月二号 - Package Syncing"></a><strong>十月二号 - Package Syncing</strong></h2><p>&emsp;&emsp;随着设备的增多，软件的配置和偏好同步问题逐渐成为了问题，比如自己常用的SublimeText，目前还只有2台工作电脑的我就很苦恼他们之间的同步问题，有的时候在公司的电脑配置好了，回家以后又不能如预期的工作了，今天参照<a target="_blank" rel="noopener" href="https://cherysunzhang.com/2016/08/syncing-sublime-text-3-preferences-and-installed-packages-using-package-syncing/">这里</a>完成了Sublime和Google Drive的同步。这样就可以在任何机器上快速得到自己常用的package然后开始工作了。<br>&emsp;&emsp;今早突然告诉绒绒我要带她出去玩，而且每个月都有一次机会，她虽然极力克制自己的高兴，但是在我出门的时候，她还是跑过来，异于寻常的跟我告别，从这里我知道了，我不是一个好爸爸，跟她互动的太少了。现在我要把这件事写到每月必做的todo list。</p>
+<h2 id="十月十号-看病归来"><a href="#十月十号-看病归来" class="headerlink" title="十月十号 - 看病归来"></a><strong>十月十号 - 看病归来</strong></h2><p>&emsp;&emsp;入院-&gt;治疗-&gt;出院，三天的流程把我们折腾的够呛，但是无论如何，总算是安全无虞的结束了，一切都是好的结果。中间还穿插了绒绒的小学入学体检。发现她的眼睛有点异常，需要进一步诊断，其他一切都顺利。毛毛回家后就开始爬，玩，跟没有任何事情发生一样，让我们对日本的医疗技术有了全新的认识，而且整个手术一分钱都没有花，全部由健康保险负担了。真的是很省心。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/01/reiwaOct/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/09/30/reiwaSept/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/30/reiwaSept/" class="post-title-link" itemprop="url">秋高不气爽</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-30 11:13:35" itemprop="dateCreated datePublished" datetime="2019-09-30T11:13:35+09:00">2019-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="九月二号-音乐流媒体设定"><a href="#九月二号-音乐流媒体设定" class="headerlink" title="九月二号 - 音乐流媒体设定"></a><strong>九月二号 - 音乐流媒体设定</strong></h2><p>&emsp;&emsp;前几天突然，真的是很突然就购买了Echo Dot第三代，主要原因是Amazon又搞活动，因为他老是给我推送邮件，说Echo又便宜了，这一次我败了，被他们这轮推送给彻底打败了，我早晨起来上厕所，就在amazon上一路点， 直接入手了。等货物送到的时候，老婆还责问我，倒不是因为钱的事情，她在意的是我没有跟她商量就买入了，下次不可以这样。谨记，很多时候真的不是因为钱，而是因为家庭里的相互尊重。<br>&emsp;&emsp;买了Echo，下一步就是要选择音乐流媒体提供商了，主要是Apple Music，Spotify，Amazon Music。虽然现在Echo已经开始支持这3家，但是各有利弊。因为Echo只支持日语，所以即便Spotify和Apple Music的中文歌服务更好，也没有办法用日语点歌播放中文歌，但是因为spotify可以免费3个月，所以先用着看看，spotify和Echo组合有什么效果再说。<br>&emsp;&emsp;现在想买游戏笔记本的心情越来越强烈，但是内心的声音一次又一次的告诉自己，你已经是爸爸了，哪有时间玩游戏啊，但是我好想玩暴雪的游戏和三国志游戏。现在也不敢给老婆商量，因为知道肯定会被驳回的。</p>
+<h2 id="九月四号-Echo控制空调成功"><a href="#九月四号-Echo控制空调成功" class="headerlink" title="九月四号 - Echo控制空调成功"></a><strong>九月四号 - Echo控制空调成功</strong></h2><p>&emsp;&emsp;用了一个晚上的时间完成了Daikin空调跟Echo dot的互动，现在不但可以远程控制家里的空调，而且可以用声音对Echo下命令来控制空调了，用姥姥的话说，这么贵的空调也没有白买。日本真的是一分价钱一分货，但是我们搬家的时候购入的空调，冰箱都挺合适的，冰箱只买合适的，没有买乱七八糟黑科技的，而空调呢，我们选择了节能，智能的Daikin空调。不错的选择<br>&emsp;&emsp;老婆想报JLPT的日语考试并且想直接N2起步，我总觉得有点担心，她虽然很聪明，但是学习时间还是要有的，现在她在照顾孩子之余，看手机的时间都没有，更何况去踏实去学习呢。所以我建议她N3起步。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/30/reiwaSept/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/09/24/tegami/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/24/tegami/" class="post-title-link" itemprop="url">手紙～拝啓十五の君へ</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-24 15:17:55" itemprop="dateCreated datePublished" datetime="2019-09-24T15:17:55+09:00">2019-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%AD%8C%E6%9B%B2/" itemprop="url" rel="index"><span itemprop="name">歌曲</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>作詞/作曲　アンジェラ・アキ</p>
+<p>拝啓　この手紙呼んでいるあなたは　どこで何をしているのだろう</p>
+<p>十五　僕には　誰にも　話せない　悩みの種があるのです</p>
+<p>未来の自分に　宛てて各手紙なら</p>
+<p>きっと　素直に打ち明けられるだろう</p>
+<p>今　負けそうで　泣きそうで　消えてしまいそうな僕は</p>
+<p>誰の言葉を信じ歩けばいいの？</p>
+<p>ひとつしかないこのの胸が何度もバラバラ割れて</p>
+<p>苦しん中で今を生きている</p>
+<p>今を生きている
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/24/tegami/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/09/17/plan-2019/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/17/plan-2019/" class="post-title-link" itemprop="url">2019年计划单</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-17 13:48:43" itemprop="dateCreated datePublished" datetime="2019-09-17T13:48:43+09:00">2019-09-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-02 13:25:15" itemprop="dateModified" datetime="2019-12-02T13:25:15+09:00">2019-12-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">计划</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <img src="/img/2019.jpg" alt="2019年计划" />
+
+<ol>
+<li>瘦到80公斤以下并且保持到2020 （失败，至今11-05还在89Kg，下次制定计划要考虑详细且合理的计划）</li>
+<li>把天津的房子卖了 （失败，房事不是很好，先租着吧，而且发现这个东西要根据行情来定的）</li>
+<li><del>帮助老婆恢复身材，建立自信</del> (断奶，参加GYM锻炼，有条不紊进行中)</li>
+<li><del>学习Excel的的基本使用，可以满足日常办公即可，并做好笔记</del></li>
+<li><del>给孩子建立各自的教育储蓄基金</del> （在乐天银行给孩子建立账户并存入了大人给孩子的各种钱）</li>
+<li>抚养亲族添加老人（失败，还是没有尝试，已经申请了2020年）</li>
+<li><del>乐天获得5万积分</del> （设定简单了，太轻松就完成了）</li>
+<li>台湾旅游 （失败，大陆政府突然禁止了所有居民入台旅游，而且购入了很多的大件，财务吃紧，所以推迟到明年，）</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/27/ReiwaAugust/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/27/ReiwaAugust/" class="post-title-link" itemprop="url">如火的八月</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-27 10:50:47" itemprop="dateCreated datePublished" datetime="2019-08-27T10:50:47+09:00">2019-08-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="八月五号-没别的，就是热！"><a href="#八月五号-没别的，就是热！" class="headerlink" title="八月五号 - 没别的，就是热！"></a><strong>八月五号 - 没别的，就是热！</strong></h2><p>&emsp;&emsp;一晃就到了八月份，日本的八月真的是不适合居住，热还罢了，关键是湿气太重，出门就是一身汗，更别说在人多又拥挤的月台了，<br>每次到了这个月份都是坐电车上班族的噩梦，比不了那些开车上班的人，人家车里有空调。电车里面是一点也不热的，但是在等车的时候，那个汗水啊，顺着裤管往下流，内裤都湿了！无论男女，手巾擦，扇子扇，除汉湿巾等等，今年较往年还好些，我搬家到了车站的附近，走两分钟就可以上电车，可以找准时间去赶电车，然后换乘一次就可以到公司了，比以前强了太多，以前要走10+分钟才可以到车站，到了就热的不行了。<br>&emsp;&emsp;周五邮寄给泽泽的Switch机器还以为这周一就可以到了，谁知道邮局打电话说电池有问题，需要分开邮寄，我的天，邮寄那天怎么不说清楚呢！<br>不过还好，妈妈刚好要去邮寄奶粉，要不然真是要白跑一趟。我查询了网上才知道原来Switch里有3块电池，而EMS的规定是只允许有两块，所以只能把手柄分开邮寄。这么热的天，妈妈带着两个孩子还要邮寄，真的是辛苦她了。不过还好，姥姥就要来了，可以让老婆好好的休息一下了。<br>&emsp;&emsp;今天早晨称体重，竟然90+Kg了！！！这还了得，我今天的计划体重可是80-Kg。必须要行动起来了，今天中午跟Santosh商量了一下，决定中午跟他去公司的健身房锻炼，20-30分钟。今早在电车里看到了一个大概40岁+的一个女性，还在拿着英语单词书在背单词，在那一瞬间，我惭愧了，真的是惭愧的不行，人家那么大岁数都还在奋斗，而我却在自己的安乐窝里天天打游戏度日。我要改变，从今天开始！</p>
+<h2 id="八月六号-听听老歌"><a href="#八月六号-听听老歌" class="headerlink" title="八月六号 - 听听老歌"></a><strong>八月六号 - 听听老歌</strong></h2><p>&emsp;&emsp;最近在使用Amazon music，速度，体验都还不错。就是中文歌曲不是很好找到。无所谓了，瞎听呗。周杰伦的歌曲还是可以找到的，现在听着他的《开不了口》还是别有一番风味的。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/27/ReiwaAugust/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/19/rememberme/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/19/rememberme/" class="post-title-link" itemprop="url">リメンバーミー</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-19 13:07:53" itemprop="dateCreated datePublished" datetime="2019-08-19T13:07:53+09:00">2019-08-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%AD%8C%E6%9B%B2/" itemprop="url" rel="index"><span itemprop="name">歌曲</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>リメンバーミー　お別れだけど　（わかれ）</p>
+<p>リメンバーミー　忘れないで　（わすれない）</p>
+<p>たとえ離れても心ひとつ　（はなれ）</p>
+<p>お前を想い　歌うこと歌　（まえをおもい　うた）</p>
+<p>リメンバーミー　遠く聞こえる　（とおくきこえる）</p>
+<p>リメンバーミー　ギターの音色は　（ねいろ）</p>
+<p>やさしく見守り包み込む　（みまもりつつみこむ）</p>
+<p>リメンバーミー</p>
+<p>目を閉じて聞こうよメロディー　（めをとじてきこう）</p>
+<p>永久に続くよ　（とわにつづくよ）</p>
+<p>リメンバーミー　忘れしない<br>　<br>リメンバーミー　夢の中で　（ゆめのなか）</p>
+<p>離れていてもいつでも会える　（はなれ）</p>
+<p>二人を繋ぐ特別な歌　（つなぐ）</p>
+<p>リメンバーミー　寂しい夜は　（さびしいよる）</p>
+<p>リメンバーミー　心を寄り添わせ　（そわせ）</p>
+<p>また会える日がやって来ることを信じ続けよう　（あえる　しんじつづけよう）</p>
+<p>リメンバーミー</p>
+<p>目を閉じて聞こうよメロディー　（めをとじてきこう）</p>
+<p>永久に続くよこの愛　（とわにつづくようこのあい）</p>
+<p>目を閉じて聞こうよメロディー</p>
+<p>永久に続くよこの愛</p>
+<p>目を閉じて聞こうよメロディー</p>
+<p>永久に続くよこの愛</p>
+<p>リメンバーミー</p>
+<p>会えないときも</p>
+<p>リメンバーミー</p>
+<p>愛に支えられ　（あいにささえられ）</p>
+<p>いつまで見守り包み込む</p>
+<p>また抱きしめるまで　（だきしめ）</p>
+<p>リメンバーミー</p>
+<p>リメンバーミー</p>
+<p>リメンバーミー</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/reiwaJuly/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/24/reiwaJuly/" class="post-title-link" itemprop="url">炎热开始的七月</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-24 13:11:23" itemprop="dateCreated datePublished" datetime="2019-07-24T13:11:23+09:00">2019-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="七月二号-半年已过"><a href="#七月二号-半年已过" class="headerlink" title="七月二号 - 半年已过"></a><strong>七月二号 - 半年已过</strong></h2><p>&emsp;&emsp;2019年过半，回头看看达成的”成就”,似乎没有。从1月26号搬进新家，就开始忙活，孩子的身份证，护照，Mynumber，役所的各种手续。目前来说，一切都已经上了正轨。也不能说什么也没有做，但是这些都是应该做的。<br>&emsp;&emsp;一切都顺调之后，遇到了一个问题，不知道该往哪个方向努力了。最近的一年，对IT技术已经生疏了很多，更多的是关注测试方面的计划，统筹等等。随着跟各个部门打交道，自己的心性和交互能力提高了很多，知道了什么可为，什么可以变通，什么可以拒绝。但是隐隐的有些担心，如果明天我被通知不要来上班了，我可以找到别的工作吗？<br>&emsp;&emsp;人的发展有很多中可能，为什么我选择了测试岗位？是觉得技术开发已经没有什么意思了。我想继续转管理的岗位，如果问为什么，首要的是薪水会提高，然后才是其他的原因。没有必要不说出心里的真实欲望，我也知道，管理的岗位有管理岗位的苦处，不能光看贼吃肉，不看贼挨打。</p>
+<h2 id="七月三号-尝试VSC"><a href="#七月三号-尝试VSC" class="headerlink" title="七月三号 - 尝试VSC"></a><strong>七月三号 - 尝试VSC</strong></h2><p>&emsp;&emsp;VSC吸收了很多Sublime的很多优点，而且直接集成了Terminal，用起来还是很方便的，尝试使用一下。</p>
+<h2 id="七月四号-幼稚园参观日"><a href="#七月四号-幼稚园参观日" class="headerlink" title="七月四号 - 幼稚园参观日"></a><strong>七月四号 - 幼稚园参观日</strong></h2><p>&emsp;&emsp;今天上午在家里办公，中午去参加了绒绒幼稚园的音乐课和英语课，还是蛮有意思的。录了很多的视频，接绒绒回家之后都没有机会给老婆看，就赶紧来公司上班了，工作原因+找同事帮忙带丈母娘的签证申请文档回天津。总体来说还是很顺利的。加油！
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/24/reiwaJuly/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蔡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

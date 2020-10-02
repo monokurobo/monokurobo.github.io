@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="三月十一号 - 病毒在别的地方爆发着&amp;emsp;&amp;emsp;从最近这些日子的数字来看，意大利和韩国争先恐后的挣第二名，意大利明显速度惊人，而且开始了封城甚至封国。但是这些措施更加促使大家迅速扩散到别的欧洲国家。反作用力惊人。跟武汉封城有一拼。因为大家都怕自己的城市或者国家的医疗资源遭到挤兑并崩溃，到时候就会出现国家无能为力的状态，进而只能隔离等死。我很能体会那些逃亡者的心情。&amp;emsp;&amp;em">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如履薄冰">
+<meta property="og:url" content="http://example.com/2020/03/11/reiwa2March/index.html">
+<meta property="og:site_name" content="蔡-网络碎碎念">
+<meta property="og:description" content="三月十一号 - 病毒在别的地方爆发着&amp;emsp;&amp;emsp;从最近这些日子的数字来看，意大利和韩国争先恐后的挣第二名，意大利明显速度惊人，而且开始了封城甚至封国。但是这些措施更加促使大家迅速扩散到别的欧洲国家。反作用力惊人。跟武汉封城有一拼。因为大家都怕自己的城市或者国家的医疗资源遭到挤兑并崩溃，到时候就会出现国家无能为力的状态，进而只能隔离等死。我很能体会那些逃亡者的心情。&amp;emsp;&amp;em">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/Coronavirus.jpg">
+<meta property="article:published_time" content="2020-03-11T06:31:01.000Z">
+<meta property="article:modified_time" content="2020-03-11T06:31:01.000Z">
+<meta property="article:author" content="蔡">
+<meta property="article:tag" content="Java,日本,测试,卡车,telematics,暴雪娱乐,暗黑,炉石传说">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/Coronavirus.jpg">
+
+
+<link rel="canonical" href="http://example.com/2020/03/11/reiwa2March/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>如履薄冰 | 蔡-网络碎碎念</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">蔡-网络碎碎念</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">深居异乡，热爱生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">37</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%9C%88%E5%8D%81%E4%B8%80%E5%8F%B7-%E7%97%85%E6%AF%92%E5%9C%A8%E5%88%AB%E7%9A%84%E5%9C%B0%E6%96%B9%E7%88%86%E5%8F%91%E7%9D%80"><span class="nav-number">1.</span> <span class="nav-text">三月十一号 - 病毒在别的地方爆发着</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%9C%88%E5%8D%81%E4%BA%8C%E5%8F%B7-%E7%BB%A7%E7%BB%AD%E4%B8%8A%E7%8F%AD"><span class="nav-number">2.</span> <span class="nav-text">三月十二号 - 继续上班</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%9C%88%E5%8D%81%E4%B8%89%E5%8F%B7-%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%8B%85%E5%BF%83"><span class="nav-number">3.</span> <span class="nav-text">三月十三号 - 越来越担心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%9C%88%E5%8D%81%E5%85%AD%E5%8F%B7-%E7%BB%92%E7%BB%92%E5%8E%BB%E5%B9%BC%E5%84%BF%E5%9B%AD"><span class="nav-number">4.</span> <span class="nav-text">三月十六号 - 绒绒去幼儿园</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%9C%88%E5%8D%81%E5%85%AB%E5%8F%B7-%E5%B9%BC%E5%84%BF%E5%9B%AD%E6%AF%95%E4%B8%9A%E4%BA%86"><span class="nav-number">5.</span> <span class="nav-text">三月十八号 - 幼儿园毕业了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B8%83%E5%8F%B7-%E4%B8%96%E7%95%8C%E4%B8%8D%E5%A5%BD%E4%BA%86"><span class="nav-number">6.</span> <span class="nav-text">三月二十七号 - 世界不好了</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蔡"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">蔡</p>
+  <div class="site-description" itemprop="description">工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/11/reiwa2March/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如履薄冰
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-11 15:31:01" itemprop="dateCreated datePublished" datetime="2020-03-11T15:31:01+09:00">2020-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <img src="/images/Coronavirus.jpg" alt="Coronavirus" />
+
+<h2 id="三月十一号-病毒在别的地方爆发着"><a href="#三月十一号-病毒在别的地方爆发着" class="headerlink" title="三月十一号 - 病毒在别的地方爆发着"></a><strong>三月十一号 - 病毒在别的地方爆发着</strong></h2><p>&emsp;&emsp;从最近这些日子的数字来看，意大利和韩国争先恐后的挣第二名，意大利明显速度惊人，而且开始了封城甚至封国。但是这些措施更加促使大家迅速扩散到别的欧洲国家。反作用力惊人。跟武汉封城有一拼。因为大家都怕自己的城市或者国家的医疗资源遭到挤兑并崩溃，到时候就会出现国家无能为力的状态，进而只能隔离等死。我很能体会那些逃亡者的心情。<br>&emsp;&emsp;回头在来看日本，还是在科学的进行着防疫，但是随着越来越多的检测，越来越多的人被确诊，其实后果跟韩国和意大利没什么两样的，前期你不检测的后果就是病毒携带者天天挤电车，坐公交，跟孩子亲密接触，然后孩子在学校传给别的同学，那些同学再传给他们的家人，然后家人继续坐电车，如此循环。爆发只是早晚的问题，取决于他们检测的速度而已。<br>&emsp;&emsp;我从3月2号开始改为开车上下班，就是为了避开使用电车。而且使我的通勤时间变短了很多，每天6点左右就可以到家，到家就可以吃饭的感觉真的很不错。从姥姥到日本，我们两个大人和两个孩子都或多或少的有一些小问题，咳嗽，流鼻涕，各种小难受，甚至开始怀疑我们全家都已经中招了，这些只是早期症状。姥姥来了之后，我们家里改变了很多，注意饮食，睡眠，减少外出等等之后。至少是目前为止，我们全家都是健康的状态，对亏了姥姥的神助攻啊！继续保持是关键。<br>&emsp;&emsp;今儿检查“确定申告”的状态，竟然发现银行账户信息是错的，赶紧找Mimura-san帮忙给打电话修正了。</p>
+<h2 id="三月十二号-继续上班"><a href="#三月十二号-继续上班" class="headerlink" title="三月十二号 - 继续上班"></a><strong>三月十二号 - 继续上班</strong></h2><p>&emsp;&emsp;收到幼儿园邮件，为了防止疫情，毕业式不让家长参加了。我跟杨晨挺高兴!</p>
+<h2 id="三月十三号-越来越担心"><a href="#三月十三号-越来越担心" class="headerlink" title="三月十三号 - 越来越担心"></a><strong>三月十三号 - 越来越担心</strong></h2><p>&emsp;&emsp;全球股市重伤，疫情波及美国，欧洲，中东，全世界都没能幸免，现在开始，担忧越来越重。</p>
+<h2 id="三月十六号-绒绒去幼儿园"><a href="#三月十六号-绒绒去幼儿园" class="headerlink" title="三月十六号 - 绒绒去幼儿园"></a><strong>三月十六号 - 绒绒去幼儿园</strong></h2><p>&emsp;&emsp;今早送绒绒去幼儿园，已经好久没有去了，她倒是充满了期待，好久没有说日语了，还有那么多小伙伴久しぶり，一定很多的话要说吧，人类存在的意义也许就是牵绊吧，从小到老，如果没有一些世俗认为的哪些阶段必须要做的事情，那也是挺无聊的<br>&emsp;&emsp;4楼的自动贩卖机开始支持CokeOnPay，以后就开始告别硬币了，慢慢的，光带着一个手机出行在日本也变得可能，虽然落后于祖国很久，但是毕竟赶上来了。目前在公司附近的消费，一个手机都可以搞定了。</p>
+<h2 id="三月十八号-幼儿园毕业了"><a href="#三月十八号-幼儿园毕业了" class="headerlink" title="三月十八号 - 幼儿园毕业了"></a><strong>三月十八号 - 幼儿园毕业了</strong></h2><p>&emsp;&emsp;昨天是绒绒幼儿园的最后一天，因为疫情的缘故，没有让家长参加。其实真的想见证一下日本毕业式的形式。听说是很感动的场面，这次无缘，等小学毕业吧。<br>&emsp;&emsp;ポイント的战争还是没有结束，但是已经快完事了。现在的阵营感很强，Yahoo靠Paypay打了一个很漂亮的翻身仗，DOCOMO也是发力很足，AU也在积极应对，唯独乐天还是吃老本，活动少的可怜，还在玩乐天point和Edy，大哥，快醒醒吧，过不了多久，你的point也玩不过其他人了，因为人家已经靠各自的pay来牢牢锁定用户的point，你还在捣鼓你的漫天撒花point！作为一个用户，我只能选择在对的时候，使用对的服务，甚至有可能因为使用某个阵营的服务多了，从而转向使用那个阵营的全部服务，比如电话服务，信用卡，银行，所以现在的这些玩家都是有移动运营商背景的。平心而论，paypay这个app是做的最好的，没有之一。而且随着时间的进行，它会慢慢整合yahoo信用卡，prime用户，yahoo钱包, 拍卖，二手货等，paypay mall也会替换yahoo shopping，我觉得yahoo的战略规划非常的清晰，就是依附paypay这种支付服务，把以前的网页版服务全部变成移动版。一切都向paypay靠拢。<br>如果再把line japan收入囊中，我觉得他就无敌了。从现在来看，他的前期无限撒钱模式是完全值得的！<br>&emsp;&emsp;毕竟我是乐天重度用户，回头看乐天，现在刚开始加入移动运营商的行列，推出了在指定地区数据流量无限的策略。但是你的信号覆盖真的是少的可怜，我想无限，但是你覆盖不到啊！那个乐天pay在刚出来的时候我对他抱了很大的期望，但是他除了可以消化我的期间限定积分，似乎没有什么其他的了。也不撒钱，现在au都开始每周撒10亿，我都没见过乐天有类似活动，难道在等着憋大招？等其他公司撒完了再撒吗？</p>
+<h2 id="三月二十七号-世界不好了"><a href="#三月二十七号-世界不好了" class="headerlink" title="三月二十七号 - 世界不好了"></a><strong>三月二十七号 - 世界不好了</strong></h2><p>&emsp;&emsp;隔了这么久没有写字了，不知道什么原因，不是因为懒惰，这些日子被各种信息包围着，已经分不清哪些是重要的</p>
+<ol>
+<li>Volvo瑞典员工全部阶段性解雇，等疫情过后再召回来。</li>
+<li>日本东京奥运会延期到2021年</li>
+<li>美国股市多次熔断，惨烈可想而知</li>
+<li>割肉卖出比特币</li>
+<li>印度LOCKDOWN</li>
+<li>UD开大会，生产可以坚持到第21周</li>
+<li>小何无法转为正社员而选择离职</li>
+<li>美国350万人失业登记</li>
+<li>石油价格暴跌</li>
+<li>通过确定申告拿到退税</li>
+</ol>
+<p>&emsp;&emsp;看到上面随便就列出的10条信息，再看看现在的自己，突然感觉好幸福，我现在还有工作，还可以坐在办公室里打字记录心情，那些被疫情困扰的国家和个人，那些丢掉工作的家庭，那些被股市蒸发掉的资产，这么一想，很庆幸自己还有工作。不光是挣钱养家的一个营生，而是一个每天起床之后可以去的地方。我的梦想不大，就是老婆孩子热炕头。</p>
+<p>&emsp;&emsp;世界上所有的事情似乎都加快了节奏，领导层需要每天开会讨论明天的计划，我最近开始睡不着觉，担心自己的工作问题，不知道哪一天公司解雇我，对于一个中年男人，一个上有老下有小的我该何去何从？以前不理解“中年危机”，现在有了切身体会，就是怕没有工作，怕辜负周围依赖对你的期许。哎！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/02/10/reiwa2Feb/" rel="prev" title="日本心真大">
+                  <i class="fa fa-chevron-left"></i> 日本心真大
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/04/01/reiwa2April/" rel="next" title="要爆发就痛快点">
+                  要爆发就痛快点 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蔡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
