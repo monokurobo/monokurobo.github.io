@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="四月二号 - 记一次生产环境事故&amp;emsp;&amp;emsp;上周5下午部署了DTC的功能，印度team部署之后赶紧汇报，一切正常，我是过来人，印度人的话如果能信，还不如相信猪会飞。 &amp;emsp;&amp;emsp;我自己去检查，没啥目的，就是想看看到底什么情况， 这一测不要紧，部署的两个主要功能，一个都不能用，我就服了。赶紧汇报给领导，结果可想而知，回到家还被拉着开会开到晚上10点多。一共是两个问题：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="樱花四月记">
+<meta property="og:url" content="http://example.com/2019/04/19/reiwaApril/index.html">
+<meta property="og:site_name" content="蔡-网络碎碎念">
+<meta property="og:description" content="四月二号 - 记一次生产环境事故&amp;emsp;&amp;emsp;上周5下午部署了DTC的功能，印度team部署之后赶紧汇报，一切正常，我是过来人，印度人的话如果能信，还不如相信猪会飞。 &amp;emsp;&amp;emsp;我自己去检查，没啥目的，就是想看看到底什么情况， 这一测不要紧，部署的两个主要功能，一个都不能用，我就服了。赶紧汇报给领导，结果可想而知，回到家还被拉着开会开到晚上10点多。一共是两个问题：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-19T07:34:30.000Z">
+<meta property="article:modified_time" content="2019-04-19T07:34:30.000Z">
+<meta property="article:author" content="蔡">
+<meta property="article:tag" content="Java,日本,测试,卡车,telematics,暴雪娱乐,暗黑,炉石传说">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2019/04/19/reiwaApril/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>樱花四月记 | 蔡-网络碎碎念</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">蔡-网络碎碎念</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">深居异乡，热爱生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">41</span></a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E4%BA%8C%E5%8F%B7-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BA%8B%E6%95%85"><span class="nav-number">1.</span> <span class="nav-text">四月二号 - 记一次生产环境事故</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E4%B8%89%E5%8F%B7-%E8%BF%B7%E8%8C%AB%E7%9A%84%E4%B8%80%E5%A4%A9"><span class="nav-number">2.</span> <span class="nav-text">四月三号 - 迷茫的一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%9B%9B%E5%8F%B7-%E5%8A%9E%E7%90%86%E6%8A%A4%E7%85%A7%E7%9A%84%E4%B8%80%E5%A4%A9"><span class="nav-number">3.</span> <span class="nav-text">四月四号 - 办理护照的一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%85%AB%E5%8F%B7-%E6%A8%B1%E8%8A%B1%E7%BB%93%E6%9D%9F%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="nav-number">4.</span> <span class="nav-text">四月八号 - 樱花结束的第一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E4%B9%9D%E5%8F%B7-%E5%B9%BC%E7%A8%9A%E5%9C%92%E5%A7%8B%E6%A5%AD%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">四月九号 - 幼稚園始業式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%8D%81%E4%B8%80%E5%8F%B7-%E5%B9%BC%E7%A8%9A%E5%9C%92%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B"><span class="nav-number">6.</span> <span class="nav-text">四月十一号 - 幼稚園正式开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%8D%81%E4%BA%8C%E5%8F%B7-%E6%98%9F%E6%9C%9F%E4%BA%94"><span class="nav-number">7.</span> <span class="nav-text">四月十二号 - 星期五</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%8D%81%E4%BA%94%E5%8F%B7-%E5%B4%AD%E6%96%B0%E7%9A%84%E4%B8%80%E5%91%A8"><span class="nav-number">8.</span> <span class="nav-text">四月十五号 - 崭新的一周</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%8D%81%E5%85%AD%E5%8F%B7-%E7%BE%8E%E5%A5%BD%E7%9A%84%E5%91%A8%E4%BA%8C"><span class="nav-number">9.</span> <span class="nav-text">四月十六号 - 美好的周二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%8D%81%E4%B8%83-%E5%85%AB%E5%8F%B7-%E5%9C%A8%E5%AE%B6%E5%8A%9E%E5%85%AC%E7%9A%84%E5%91%A8%E4%B8%89"><span class="nav-number">10.</span> <span class="nav-text">四月十七-八号 - 在家办公的周三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E5%8D%81%E4%B9%9D%E5%8F%B7-%E7%AD%89%E5%BE%85%E6%94%BE%E5%81%87%E7%9A%84%E5%91%A8%E4%BA%94"><span class="nav-number">11.</span> <span class="nav-text">四月十九号 - 等待放假的周五</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%9C%88%E4%BA%8C%E5%8D%81%E5%85%AD%E5%8F%B7-%E9%BB%84%E9%87%91%E5%91%A8%E5%89%8D%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9"><span class="nav-number">12.</span> <span class="nav-text">四月二十六号 - 黄金周前的最后一天</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蔡"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">蔡</p>
+  <div class="site-description" itemprop="description">工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/04/19/reiwaApril/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="蔡">
+      <meta itemprop="description" content="工作原因来到日本，从完全不懂日语到渐渐融入这里的节奏，一直在努力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔡-网络碎碎念">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          樱花四月记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-04-19 16:34:30" itemprop="dateCreated datePublished" datetime="2019-04-19T16:34:30+09:00">2019-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="四月二号-记一次生产环境事故"><a href="#四月二号-记一次生产环境事故" class="headerlink" title="四月二号 - 记一次生产环境事故"></a><strong>四月二号 - 记一次生产环境事故</strong></h2><p>&emsp;&emsp;上周5下午部署了DTC的功能，印度team部署之后赶紧汇报，一切正常，我是过来人，印度人的话如果能信，还不如相信猪会飞。</p>
+<p>&emsp;&emsp;我自己去检查，没啥目的，就是想看看到底什么情况， 这一测不要紧，部署的两个主要功能，一个都不能用，我就服了。赶紧汇报给领导，结果可想而知，回到家还被拉着开会开到晚上10点多。一共是两个问题：<br>    - 瑞典团队没有配置<br>    - 印度团队没有数据库映射</p>
+<p>&emsp;&emsp;我很生气，但是这就是显示， 多国文化下的工作就是这样，你不知道哪里就蹦出来一个幺蛾子，谁都不能相信，只能相信自己的手。</p>
+<h2 id="四月三号-迷茫的一天"><a href="#四月三号-迷茫的一天" class="headerlink" title="四月三号 - 迷茫的一天"></a><strong>四月三号 - 迷茫的一天</strong></h2><p>&emsp;&emsp;工作之余，该干点什么呢？这个问题困扰了我很久很久。</p>
+<p>&emsp;&emsp;之前，作为一名开发人员还可以一头扎在技术的海洋里，找一些感兴趣的技术钻研，现在不再作为技术人员了，以前关注的技术博客也不再浏览了。逐渐开始关注ポイント的东西，但是这些东西不能填补我的时间空隙。我需要更多的事情来做，30多岁感觉到了无聊，真的挺不好意思。</p>
+<p>&emsp;&emsp;中国的程序员们把996工作制度顶到了github的榜首，让全世界的技术人员都知道在遥远的东方国度里，有很多人，每天上午上9点，晚上下9点，每天工作6天，甚至没有周末的时间。而我则偏安一隅，在以加班文化闻名的日本，天天朝九晚五的生活着。</p>
+<p>&emsp;&emsp;今天给高峰打音频，他拒绝，然后也没有打回来的意思，我猜想他是生气了在日本的事情，管他呢，既然你对我爱答不理，那我就屏蔽你对我的关注，咱都别联系最好。<a id="more"></a></p>
+<h2 id="四月四号-办理护照的一天"><a href="#四月四号-办理护照的一天" class="headerlink" title="四月四号 - 办理护照的一天"></a><strong>四月四号 - 办理护照的一天</strong></h2><p>&emsp;&emsp;早晨5点40起床，快速吃早点后赶上了06：28出发的电车，但是没有座，一直被堵在车门口，毛毛还在途中哭闹，真的是难受着一路前行到了六本木的车站，找bus也犯难了，一出站口没有找到我们要坐的bus，这个时候毛毛的闹腾到了顶点，估计是饿了，我们就开始找地方喂奶，结果找到了一个高级早点屋，进去点了两个套餐1500+，哎，早知道就不在家里吃早点了。费了半天劲终于找到了bus，然后一路飞奔到了中国大使馆，已经有很多人在排队了。<br>&emsp;&emsp;办理情况还是很开心的，因为我在网上预约了，资料也齐全，所以最多也就20分钟，两个孩子都搞定了，赶紧离开那个地方，呆久了会疯掉的。办理结束后会邮寄到我的家，真的再也不想去东京了</p>
+<h2 id="四月八号-樱花结束的第一天"><a href="#四月八号-樱花结束的第一天" class="headerlink" title="四月八号 - 樱花结束的第一天"></a><strong>四月八号 - 樱花结束的第一天</strong></h2><p>&emsp;&emsp;周末的两天都奉献给了赏樱。周末的赏樱有点意外，地方远，而且非常不适合带着宝宝推车去，因为在堤坡上，上下都很麻烦，尤其是带着宝宝推车。所以以后不会再去荒川公园赏樱了。<br>&emsp;&emsp;这周的任务就是绒绒的开园仪式，问题不大，但是要穿正装，不是很习惯的说。妈妈提议我们要开始每个月定期存钱了，因为无节制的花销总是让我们存不下什么钱。我觉得乐天的定投是一个很好的选择。这周的任务就是他了，仔细调研定投的投入和收益。其实我是个安于现状的人，而老婆是个不安分的因子，总是有很多点子出来，在日本，不管干什么都是要花钱的，她又不需要管钱，不是出去玩就是要搞这搞那的，最后说我是铁公鸡，哎，没出说理去。<br>&emsp;&emsp;今天尝试了证券投资，第一次尝试5万日元</p>
+<h2 id="四月九号-幼稚園始業式"><a href="#四月九号-幼稚園始業式" class="headerlink" title="四月九号 - 幼稚園始業式"></a><strong>四月九号 - 幼稚園始業式</strong></h2><p>&emsp;&emsp;从今儿开始，绒绒就是年长组的孩子了，相当于咱国内的大班儿。妈妈要照顾二宝儿，我就一身西装的去了。发现大家并没有全都是正装，但是妈妈们都是化妆了肯定，零星看到了几个爸爸来。今年没有跟晗晗分在一个班，也好，省得她俩天天黏在一起，失去了认识别的小朋友的机会。<br>&emsp;&emsp;重点记录一下参加幼儿园支援活动的情况，幼儿园每年都会又很多的活动，比如远足、秋季运动会、音乐发表什么的，都会抽调一些父母来帮忙，所以每次的开园式都伴随着大家要自己选择帮助什么活动，最后会有几个替补名额，当然了，谁都不想帮忙，因为真的很麻烦很累。我一开始选择了“爸爸参观日”这个活动，心里想着我作为爸爸反正要来参加，索性帮助这个，结果选的人太多，只能通过石头剪刀布的方式决定！我赢了，结果是输的人才可以担当。好吧，我就惴惴不安的拿着绒绒的名字等待下一次的猜拳的机会，大部分的项目都确定了，就剩下音乐发表会和秋季运动会了，这俩大活儿太复杂，每人愿意参加。比较下，音乐发表会轻松写，于是大家都贴在了音乐发表会。（当然了，也有两个识大体顾大局的妈妈主动选择了秋季运动会）其他的人就开始剪刀石头布决定谁可以担当音乐发表会，我又赢了，结果这个机会也没有了，最后只能去猜拳秋季发表会的最后两个名额，紧张到窒息啊。这次我又赢了，输了的两个妈妈面露难色，但是没办法，谁让他们手气壮的，所有剩下的家长就开始为候补的顺序再次猜拳，我又输的不行，直接到了候补最后一名，哈哈。大成功！</p>
+<h2 id="四月十一号-幼稚園正式开始"><a href="#四月十一号-幼稚園正式开始" class="headerlink" title="四月十一号 - 幼稚園正式开始"></a><strong>四月十一号 - 幼稚園正式开始</strong></h2><p>&emsp;&emsp;今天早晨送绒绒上bus，结果站错bus停了，真是丢人啊，怎么就没有查清楚呢！我的github.io的主页在公司访问居然不行了。郁闷啊。这是逼我在本地彻底验证好了才可以传的意思。</p>
+<h2 id="四月十二号-星期五"><a href="#四月十二号-星期五" class="headerlink" title="四月十二号 - 星期五"></a><strong>四月十二号 - 星期五</strong></h2><p>&emsp;&emsp;今天星期五，没有多少意外的感觉，总觉得时间过的很快，但是到底用在了什么地方，我说不出来，来到公司就是工作，回家就是吃饭刷碗带孩子，然后玩一会炉石传说，就睡觉了，第二天重复，第三天重复，第四天。。。今天。已经没有什么兴奋的事情可以让我从早晨的被窝里蹦起来，这就是生活的平淡吧。有的人追求刺激的一生，有的人喜欢岁月静好，有的人喜欢老婆孩子热炕头，第三个人就是我！<br>&emsp;&emsp;给绒绒申请了Junior NISA，开始为绒绒的教育储备基金，并计划把她的手当和压岁钱都提她存进去，在她18岁的时候一次性给她，为她的为未来助力。如果这个情况可以的话，下一步就是替毛毛储备教育资金。在日本生活，什么东西都要有准备，不然就会临时抱佛脚的感觉。<br>&emsp;&emsp;公司的毕业生有5个人分到了IT这边，今天上午听他们的自我介绍，都有留学的经历，而且每个人的朝气和自信让我感觉很欣慰，在这个死气沉沉的IT4楼，可以有新的血液加入，挺好的。分到我们组的那个女孩子居然会说中文并且在美国拿到了MBA，真的是后生可畏！看到他们就让我不禁想到了等绒绒工作时候的场景。现在想着好远的样子，但是真到了那一天，也就是慨叹一声：岁月荏苒，好快！</p>
+<h2 id="四月十五号-崭新的一周"><a href="#四月十五号-崭新的一周" class="headerlink" title="四月十五号 - 崭新的一周"></a><strong>四月十五号 - 崭新的一周</strong></h2><p>&emsp;&emsp;周末过的还是很开心的。周末本打算去原的地方去玩，但是在家磨蹭磨蹭的就错过了出发的黄金时间，索性就去了家附近的公园，意外的是，那里樱花环绕，落英缤纷，和绒绒毛毛一起玩耍拍照，也落得个自在非常。中间有个小插曲，从电视剧里看到老公意外死亡后，老婆对家里的情况一无所知，连房产证都不知道放在哪里。我就跟老婆说要写一个清单给她，万一发生了什么事情，她可以参考上面的信息找到一些重要的东西。就是个以防万一的策略。结果老婆一听一想，就不禁流下了眼泪，我很意外，她说她无法想象那样的事情发生，如果想，就会哭。我们在一起时间久了，已经离不开彼此。爱，就是如此吧。<br>中午饿了，就去しゃぶ葉去吃食べ放題，去了离我们家最近的那个店，也许是我们去的时间刚刚好，客人刚刚好，不是很挤。给我们的座位也是挺好的，服务人员的服务也无可挑剔，总是及时的清理我们桌子上的垃圾。<br>&emsp;&emsp;晚上的时候，老婆突然说让绒绒跟我换床睡，不知道是怎么想到的。晚上具体情况怎么样我不知道，但是看到两个孩子睡在一起，寝顔总是让我和妈妈感觉到美好，觉得一切的苦和累都是值得的。每次回到家，小家伙看到我的眼神，就是对我最大的安慰。<br>&emsp;&emsp;今天中午跟新人Sam一起吃午饭，大概聊了一下车联网，他的脸上写满了对未知领域的兴趣，这个是装不出来的，他是个年轻的孩子，看到他，我总是想把我知道的一股脑的告诉他，让他少走些弯路，可是我在他这个年纪，怎么就遇不到现在的我这样的人呢？也许就是他对新事物的兴趣，让我有动力想帮助他，这也是他的年轻优势。一切都有可能！</p>
+<h2 id="四月十六号-美好的周二"><a href="#四月十六号-美好的周二" class="headerlink" title="四月十六号 - 美好的周二"></a><strong>四月十六号 - 美好的周二</strong></h2><p>&emsp;&emsp;老板从瑞典回来了，最近的工作todo列表终于清理的差不多了，多少可以喘口气了。但是工作是永远做不完的，自己的工作是完全可以被替代的，明白了这两点。就可以平心静气的工作了。今天上午收到了冬哥的电话，他问我要fitness的代码，我说我已经不干开发了，他现在也离开外企，在国企就职了。 说老了，干不动了。记得刚进沃尔沃的时候，是冬哥一直教我，在技术上帮我进步了很多，我很感谢他。现在换到了国企工作，似乎跟我就职履历刚好相反，我是一毕业就进了国企，干了四五年之后跳槽到了volvo，然后就一直干，现在算下来，我也在volvo工作了7年有余，真是白驹过隙，从毕业一路走来，我都十分幸运的遇到了贵人帮我，在国企是程工一直对我很好，在volvo是Mingwei对我很好，离开了中国，遇到了Carl，他也对我很好，冬哥说我这种人到哪里都吃得开，其实说到底都是性格决定格局吧。<br>&emsp;&emsp;老婆带毛毛打疫苗，结果到了医院发现没有带保险证，还质问我是否拿走了，结果证明是她在上次看病结束后拿药的时候放在了装药的袋子里。她又赶紧回家取了回来，算是个小教训吧。<br>&emsp;&emsp;我也办了一件特别危险的事情，做早餐的时候，煎鸡蛋后没有关煤气，结果弄家里一股烧着的味道。老婆念在我打电话关心她的份儿上，没有眼里的卷我，以此为戒，下不为例。</p>
+<h2 id="四月十七-八号-在家办公的周三"><a href="#四月十七-八号-在家办公的周三" class="headerlink" title="四月十七-八号 - 在家办公的周三"></a><strong>四月十七-八号 - 在家办公的周三</strong></h2><p>&emsp;&emsp;WFH,送孩子的时候跟いしんくん的妈妈聊了聊,发现我们两家情况差不多，孩子都是同级生，二宝儿也是。所以处好关系还是很重要的。本来想在家办公帮帮劳累的妈妈，结果孩他妈说我在家比不在家还累，因为她中午还要给我做饭，而我老是在家开会帮不上什么忙。哎！失败！<br>&emsp;&emsp;设定sublime的配置文件同步到google的drive上，这样的话就可以在不同的机器之间共享配置了。</p>
+<h2 id="四月十九号-等待放假的周五"><a href="#四月十九号-等待放假的周五" class="headerlink" title="四月十九号 - 等待放假的周五"></a><strong>四月十九号 - 等待放假的周五</strong></h2><p>&emsp;&emsp;今天沉浸在sublime text插件的世界里不能自拔，现在正在测试vim mode,但是阿比已经通过了AWS的认证了，我的时间都被狗吃了吗？人家为什么就能在那么忙的时间里还兼顾学习呢？真的要深刻的检讨一下自己了。</p>
+<h2 id="四月二十六号-黄金周前的最后一天"><a href="#四月二十六号-黄金周前的最后一天" class="headerlink" title="四月二十六号 - 黄金周前的最后一天"></a><strong>四月二十六号 - 黄金周前的最后一天</strong></h2><p>&emsp;&emsp;今天是黄金周前的最后一天工作日，人心涣散，大家都在计划黄金周怎么娱乐。我却是结结实实的劳动了一天，这两天的E2E测试真的是挺累的，Muto-san就坐在旁边，压力很大。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/04/10/Banks-in-Japan/" rel="prev" title="日本的银行">
+                  <i class="fa fa-chevron-left"></i> 日本的银行
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/05/14/reiwaMay/" rel="next" title="繁忙五月">
+                  繁忙五月 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蔡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.0.0/utils.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.0.0/motion.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.0.0/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
